@@ -1,0 +1,25 @@
+header p {
+    background-color: #ff6600;
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    margin: 0px;
+    padding:0px;
+}
+.img{
+    object-fit: cover;
+}
+.font-item{
+    color: red;
+}
+section, .contact{
+    margin: 80px;
+}
+a{
+    size: 50px;
+}
+nav div img{
+    margin: 10px;
+    display: inline-block;
+}
