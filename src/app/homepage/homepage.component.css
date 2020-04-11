@@ -1,0 +1,11 @@
+img {
+    object-fit: cover;
+}
+
+div {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.jumbotron {
+    background-color: #ff6600;
+}

@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ContactComponent } from './contact/contact.component'
 
 import { ProjectComponent } from './Project/project/project.component';
 import { ProjectListComponent } from './Project/project-list/project-list.component';
 import { ProjectModule } from './Project/project.module';
 import { ProjectProductComponent } from './Project/project-product/project-product.component';
-import { AddProjectComponent } from './Project/add-project/add-project.component'
+import { AddProjectComponent } from './Project/add-project/add-project.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   { path: 'project', component: ProjectComponent},
   { path: 'projecten', component: ProjectListComponent},
   { path: 'projecten/projectProduct', component: ProjectProductComponent},
-  { path: 'addProject', component : AddProjectComponent}
+  { path: 'addProject', component : AddProjectComponent},
+  { path: 'contact', component : ContactComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainNavComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,101 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="contact">
+  <div>
+    <h1 class="pb-2 mt-4 mb-2  border-bottom">Info</h1>
+    <table class=" table table-borderless w-25 p-3">
+        <tbody>
+            <tr>
+                <td><i class="material-icons">email</i></td>
+                <td>Email</td>
+                <td><a href="mailto:info@veninvest.be" rel="nofollow">info@veninvest.be</a></td>
+            </tr>
+            <tr>
+                <td><i class="material-icons">phone</i></td>
+                <td>Telefoonnummer</td>
+                <td>0476/93.93.01</td>
+            </tr>
+            <tr>
+                <td><i class="material-icons">location_on</i></td>
+                <td>Adres</td>
+                <td>Vennebosstraat 9<br>8720 Oeselgem</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div>
+    <h1 class="pb-2 mt-4 mb-2 border-bottom">
+        Contacteer <small>ons</small>
+      </h1>
+    <form method="GET">
+      <div class="row">
+        <section class="col-sm-12 col-md-6">
+          <fieldset class="form-group">
+            <label for="naam">Naam</label>
+            <input
+              type="text"
+              class="form-control"
+              id="naam"
+              name="name"
+              aria-describedby="naamHelp"
+              placeholder="Volledige naam"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="email">Emailadres</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We zullen <strong>nooit</strong> uw e-mail met iemand anders
+              delen.</small
+            >
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="telefoon">Telefoon</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">+32</div>
+              </div>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefoon"
+                name="telefoon"
+              />
+            </div>
+          </fieldset>
+        </section>
+        <section class="col-sm-12 col-md-6">
+          <fieldset class="form-group">
+            <label for="cboOnderwerp">Onderwerp</label>
+            <textarea
+              class="form-control"
+              id="txtOnderwerp"
+              name="onderwerp"
+              rows="1"
+              maxlength="25"
+            >
+            </textarea>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="txtBeschrijving">Beschrijving</label>
+            <textarea
+              class="form-control"
+              id="txtBeschrijving"
+              name="beschrijving"
+              rows="9"
+            ></textarea>
+          </fieldset>
+          <div class="button-group d-flex justify-content-end">
+            <button type="submit" class="btn btn-secondary">Verzenden</button>
+          </div>
+        </section>
+      </div>
+    </form>
+  </div>
+</div>
