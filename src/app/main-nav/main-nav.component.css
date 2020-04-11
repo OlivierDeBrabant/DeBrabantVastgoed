@@ -4,23 +4,19 @@ header p {
     margin: 0px;
     padding: 0px;
 }
-nav{
-    margin: 0px;
-    padding:0px;
-}
 .img{
     object-fit: cover;
 }
 .font-item{
     color: red;
 }
-section, .contact{
-    margin: 80px;
-}
-a{
-    size: 50px;
+div a{
+    font: 1.25em sans-serif;
 }
 nav div img{
     margin: 10px;
     display: inline-block;
+}
+body{
+    margin-bottom: 20px;
 }
