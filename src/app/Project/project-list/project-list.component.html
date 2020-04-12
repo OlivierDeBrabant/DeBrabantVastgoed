@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
 <div class="all">
   <h1 class="font-weight-normal"><i class="fa fa-home"></i> Projecten</h1>
   <hr />
@@ -6,10 +10,9 @@
   <div fxLayout="column" fxLayoutGap="2%">
     <app-add-project (newProject)="addNewProject($event)"></app-add-project>
     <div class="row">
-      <div class="project" *ngFor="let project of projects">
+      <div class="project" *ngFor="let project of projects$ | async">
         <app-project [project]="project"></app-project>
       </div>
     </div>
   </div>
-
 </div>

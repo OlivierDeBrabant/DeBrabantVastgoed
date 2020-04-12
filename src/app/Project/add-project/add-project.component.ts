@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Project } from '../project.model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Product } from '../product.model';
 
 @Component({
   selector: 'app-add-project',
@@ -18,9 +19,9 @@ export class AddProjectComponent implements OnInit {
     })*/
   }
   addProject(projectName: HTMLInputElement): boolean {
-    const project = new Project(projectName.value, [], "")
+    const project = new Project(projectName.value, "", "", [])
     this.newProject.emit(project);
-    console.log(project.name);
+    console.log(project.naam);
     return false;
   }
 }

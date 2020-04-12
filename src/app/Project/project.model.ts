@@ -1,22 +1,24 @@
 interface ProjectJson {
-  name: string;
-  producten: string[];
+  naam: string;
   beschrijving: string;
+  adres: string;
+  producten: string[];
 }
 
 export class Project {
   constructor(
-    private _name: string,
-    private _producten = new Array<string>(),
-    private _beschrijving: string
+    private _naam: string,
+    private _beschrijving: string,
+    private _adres: string,
+    private _producten = new Array<string>()
   ) {}
   static fromJSON(json: ProjectJson): Project {
-    const proj = new Project(json.name, json.producten, json.beschrijving);
-    return proj;
+    const project = new Project(json.naam, json.beschrijving, json.adres, json.producten);
+    return project;
   }
 
-  get name(): string {
-    return this._name;
+  get naam(): string {
+    return this._naam;
   }
 
   get producten(): string[] {
@@ -25,6 +27,9 @@ export class Project {
 
   get beschrijving(): string {
     return this._beschrijving;
+  }
+  get adres(): string{
+    return this._adres;
   }
   addProduct(titel: string, prijs?: number, beschrijving?: string) {
     this._producten.push(`${titel || 1} ${beschrijving || ""} ${prijs}`);

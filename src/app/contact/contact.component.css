@@ -1,7 +1,10 @@
 .contact{
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .tbody{
     border: none;
+}
+h1{
+    font: 2em sans-serif;
 }
