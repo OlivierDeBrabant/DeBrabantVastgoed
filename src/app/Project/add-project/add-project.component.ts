@@ -18,10 +18,10 @@ export class AddProjectComponent implements OnInit {
       name: new FormControl('risotto')
     })*/
   }
-  addProject(projectName: HTMLInputElement): boolean {
-    const project = new Project(projectName.value, "", "", [])
+  addProject(projectName: HTMLInputElement, beschrijving: HTMLInputElement, adres: HTMLInputElement): boolean {
+    const project = new Project(projectName.value, beschrijving.value, adres.value, [])
     this.newProject.emit(project);
-    console.log(project.naam);
+    console.log(project.naam + '\n' + project.beschrijving + '\n' + project.adres);
     return false;
   }
 }

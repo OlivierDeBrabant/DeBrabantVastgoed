@@ -10,12 +10,9 @@ import { map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProjectDataService {
-  //private _projects = PROJECTS;
+  
   constructor(private http: HttpClient) { }
 
-  /*get projects(){
-    return this._projects;
-  }*/
   get projects$(): Observable< Project[] > {
     return this.http.get(`${environment.apiUrl}/Projects/`).pipe(
       tap(console.log),
@@ -24,6 +21,9 @@ export class ProjectDataService {
     ));
   }
   addNewProject(project : Project){
-    //this._projects.push(project);
+    return this.http.post(`${environment.apiUrl}/Projects/AddProject`, project.toJSON())
+        .pipe(map(Project.fromJSON))
+        .subscribe();
   }
 }
+//.pipe(catchError(this.handleError)

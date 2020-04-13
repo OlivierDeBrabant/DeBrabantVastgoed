@@ -16,7 +16,13 @@ export class Project {
     const project = new Project(json.naam, json.beschrijving, json.adres, json.producten);
     return project;
   }
-
+  toJSON(): ProjectJson {
+    return <ProjectJson>{
+    naam: this.naam,
+    beschrijving: this.beschrijving,
+    adres: this.adres
+    };
+  }
   get naam(): string {
     return this._naam;
   }
@@ -31,7 +37,7 @@ export class Project {
   get adres(): string{
     return this._adres;
   }
-  addProduct(titel: string, prijs?: number, beschrijving?: string) {
+  /*addProduct(titel: string, prijs?: number, beschrijving?: string) {
     this._producten.push(`${titel || 1} ${beschrijving || ""} ${prijs}`);
-  }
+  }*/
 }

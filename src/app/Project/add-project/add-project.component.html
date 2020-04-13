@@ -1,7 +1,42 @@
-<div class="form">
+<div>
+  <h1>Nieuw Project</h1>
+  <div class="form">
     <div class="form-field">
-        <label for="naam">Naam Project:</label>
-        <input type="text" class="form-control" id="naam" placeholder="naam" #newProjectName>
+      <label for="naam">Naam:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="naam"
+        placeholder="naam"
+        #newProjectName
+      />
     </div>
-    <button class="button" (click)="addProject(newProjectName)">Add project</button>
+    <div class="form-field">
+      <label for="beschrijving">Beschrijving:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="beschrijving"
+        placeholder="beschrijving project"
+        rows="3"
+        #beschrijving
+      />
+    </div>
+    <div class="form-field">
+      <label for="adres">Adres:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="adres"
+        placeholder="adres van project"
+        #adres
+      />
+    </div>
+    <button
+      class="btn btn-secondary"
+      (click)="addProject(newProjectName, beschrijving, adres)"
+    >
+      Add project
+    </button>
+  </div>
 </div>
