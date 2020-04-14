@@ -37,6 +37,9 @@ export class Project {
   get adres(): string{
     return this._adres;
   }
+  get naamZonderSpatie(): string{
+    return this._naam.replace(/\s/g, "");
+  }
   /*addProduct(titel: string, prijs?: number, beschrijving?: string) {
     this._producten.push(`${titel || 1} ${beschrijving || ""} ${prijs}`);
   }*/

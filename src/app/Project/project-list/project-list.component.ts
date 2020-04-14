@@ -21,7 +21,4 @@ export class ProjectListComponent {
   get projects$(): Observable<Project[]> {
     return this._fetchProjects$;
   }
-  addNewProject(project) {
-    this._projectDataService.addNewProject(project);
-  }
 }

@@ -25,5 +25,9 @@ export class ProjectDataService {
         .pipe(map(Project.fromJSON))
         .subscribe();
   }
+  /*getProjectOpNaam(naam: string){
+    this.projects$.filter
+    
+  } */
 }
 //.pipe(catchError(this.handleError)

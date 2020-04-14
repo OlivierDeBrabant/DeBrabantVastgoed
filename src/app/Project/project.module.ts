@@ -8,13 +8,19 @@ import { ProjectProductComponent } from './project-product/project-product.compo
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProjectOverzichtComponent } from './project-overzicht/project-overzicht.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+
 
 const appRoutes: Routes = [
-  { path: 'projectProduct', component: ProjectProductComponent}
+  { path: 'projectProduct', component: ProjectProductComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'editProject', component: EditProjectComponent}
 ];
 
 @NgModule({
-  declarations: [ProjectComponent, ProductComponent, ProjectListComponent, ProjectProductComponent, AddProjectComponent],
+  declarations: [ProjectComponent, ProductComponent, ProjectListComponent, ProjectProductComponent, AddProjectComponent, DashboardComponent, ProjectOverzichtComponent, EditProjectComponent],
   imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule],
   exports: [ProjectListComponent]
 })

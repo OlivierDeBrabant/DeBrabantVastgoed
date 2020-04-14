@@ -1,0 +1,25 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Naam</th>
+      <th scope="col">Adres</th>
+      <th scope="col">Opties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects$ | async">
+      <td>{{ project.naam }}</td>
+      <td>{{ project.adres }}</td>
+      <td id="icon">
+        <a (click)="editProject(project)"><i class="material-icons">edit</i></a>
+        <a (click)="addProduct(project)"><i class="material-icons">home</i></a>
+        <a (click)="deleteProject(project)"><i class="material-icons">delete</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

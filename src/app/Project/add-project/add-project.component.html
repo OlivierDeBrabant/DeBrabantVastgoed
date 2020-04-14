@@ -1,42 +1,53 @@
-<div>
-  <h1>Nieuw Project</h1>
-  <div class="form">
-    <div class="form-field">
-      <label for="naam">Naam:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="naam"
-        placeholder="naam"
-        #newProjectName
-      />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<div class="all">
+  <h1 class="font-weight-normal"><i class="fa fa-home"></i> Project toevoegen</h1>
+  <hr />
+  <form [formGroup]="project" (ngSubmit)="onSubmit()">
+    <div class="form">
+      <div class="form-field">
+        <label for="naam">Naam:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="naam"
+          placeholder="naam"
+          formControlName="naam"
+          required
+        />
+        
+      </div>
+      <div class="form-field">
+        <label for="beschrijving">Beschrijving:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="beschrijving"
+          placeholder="beschrijving project"
+          formControlName="beschrijving"
+          rows="3"
+        />
+      </div>
+      <div class="form-field">
+        <label for="adres">Adres:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="adres"
+          placeholder="adres van project"
+          formControlName="adres"
+          required
+        />
+      </div>
+      <button
+        class="btn btn-secondary"
+        type="submit"
+        [disabled]="!project.valid"
+      >
+        Add project
+      </button>
     </div>
-    <div class="form-field">
-      <label for="beschrijving">Beschrijving:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="beschrijving"
-        placeholder="beschrijving project"
-        rows="3"
-        #beschrijving
-      />
-    </div>
-    <div class="form-field">
-      <label for="adres">Adres:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="adres"
-        placeholder="adres van project"
-        #adres
-      />
-    </div>
-    <button
-      class="btn btn-secondary"
-      (click)="addProject(newProjectName, beschrijving, adres)"
-    >
-      Add project
-    </button>
-  </div>
-</div>
+  </form>
