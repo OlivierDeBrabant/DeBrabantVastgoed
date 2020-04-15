@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Product } from '../product.model';
 import { Observable } from 'rxjs';
 import { ProjectDataService } from '../project-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-project',
@@ -15,7 +16,7 @@ export class AddProjectComponent implements OnInit {
   private _fetchProjects$: Observable<Project[]> 
     = this._projectDataService.projects$;
 
-  constructor(private _projectDataService: ProjectDataService) { }
+  constructor(private _projectDataService: ProjectDataService, private _router: Router) { }
   @Output() public newProject = new EventEmitter<Project>();
   
   ngOnInit() {
@@ -26,11 +27,10 @@ export class AddProjectComponent implements OnInit {
     })
   }
   onSubmit(){
-    console.log("hoi");
     const p = new Project(this.project.value.naam, this.project.value.beschrijving, this.project.value.adres)
-    console.log(p.naam + '\n' + p.beschrijving + '\n' + p.adres);
     this.newProject.emit(p);
     this._projectDataService.addNewProject(p);
+    this._router.navigate(['dashboard']);
   }
 
 

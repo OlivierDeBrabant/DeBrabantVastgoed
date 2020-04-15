@@ -1,0 +1,15 @@
+.all{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h1{
+    font: 2em sans-serif;
+}
+#card{
+    margin: 20px;
+}
+img {
+    object-fit: cover;
+    height: 200px;
+    width: 400px;
+}

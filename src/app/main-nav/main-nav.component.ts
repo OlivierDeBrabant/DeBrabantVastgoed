@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
+import { AuthenticationService } from '../user/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.css']
 })
-export class MainNavComponent implements OnInit {
+export class MainNavComponent {
 
-  constructor() { }
+  loggedInUser$ = this._authenticationService.user$;
 
-  ngOnInit(): void {
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private _authenticationService: AuthenticationService,
+    private _router: Router
+  ) {}
+
+  logout() {
+    this._authenticationService.logout();
+    this._router.navigate(['']);
   }
-
+  login() {
+    console.log('login');
+    this._router.navigate(['login']);
+  }
+  naarDashboard(){
+    this._router.navigate(['dashboard'])
+  }
 }

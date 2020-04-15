@@ -13,17 +13,12 @@ import { ProjectListComponent } from './Project/project-list/project-list.compon
 import { ProjectModule } from './Project/project.module';
 import { ProjectProductComponent } from './Project/project-product/project-product.component';
 import { AddProjectComponent } from './Project/add-project/add-project.component';
+import { UserModule } from './user/user.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const appRoutes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'project', component: ProjectComponent},
-  { path: 'projecten', component: ProjectListComponent},
-  { path: 'projecten/projectProduct', component: ProjectProductComponent},
-  { path: 'addProject', component : AddProjectComponent},
-  { path: 'contact', component : ContactComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -31,12 +26,14 @@ const appRoutes: Routes = [
     MainNavComponent,
     HomepageComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     ProjectModule,
-    RouterModule.forRoot(appRoutes)
+    UserModule,
+    AppRoutingModule
   ],
   exports: [ProjectListComponent],
   providers: [],

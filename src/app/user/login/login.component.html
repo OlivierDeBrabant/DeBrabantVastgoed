@@ -1,0 +1,52 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="all">
+  <h1 class="pb-2 mt-4 mb-2 border-bottom">
+    <i class="material-icons">person</i> Login
+  </h1>
+
+  <p>
+    Deze pagina is enkel voor de administrator van de site, keer terug naar
+    <a [routerLink]="['']">home.</a>
+  </p>
+  <form [formGroup]="user" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="email">Email:</label>
+      <input
+        class="form-control"
+        placeholder="email"
+        aria-label="email"
+        data-cy="login-email"
+        formControlName="username"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="password">Wachtwoord:</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="password"
+        aria-label="password"
+        data-cy="login-password"
+        formControlName="password"
+      />
+    </div>
+
+    <button
+      class="btn btn-secondary"
+      type="submit"
+      color="primary"
+      data-cy="login-button"
+    >
+      Login
+    </button>
+  </form>
+
+  <mat-card class="error" *ngIf="errorMessage" data-cy="appError">
+    got an error: {{ errorMessage }}
+  </mat-card>
+</div>

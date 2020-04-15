@@ -14,9 +14,9 @@ export class DashboardComponent implements OnInit {
   }
 
   addProject(){
-    this._router.navigate(['addProject'])
+    this._router.navigate(['dashboard/addProject'])
   }
   registreer(){
-    this._router.navigate(['registreer'])
+    this._router.navigate(['dashboard/registreer'])
   }
 }

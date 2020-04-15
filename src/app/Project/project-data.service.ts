@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { PROJECTS } from './mock-projects';
 import { Project } from './project.model';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { map, tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +24,27 @@ export class ProjectDataService {
         .pipe(map(Project.fromJSON))
         .subscribe();
   }
+  getProject$(id: string) {
+    return this.http
+      .get(`${environment.apiUrl}/Projects/${id}`)
+      .pipe(catchError(this.handleError), map(Project.fromJSON));
+  }
+
   /*getProjectOpNaam(naam: string){
     this.projects$.filter
     
   } */
+  handleError(err: any): Observable<never> {
+    let errorMessage: string;
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else if (err instanceof HttpErrorResponse) {
+      console.log(err);
+      errorMessage = `'${err.status} ${err.statusText}' when accessing '${err.url}'`;
+    } else {
+      errorMessage = err;
+    }
+    return throwError(errorMessage);
+  }
 }
 //.pipe(catchError(this.handleError)

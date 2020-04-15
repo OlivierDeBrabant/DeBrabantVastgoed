@@ -1,6 +1,6 @@
 import { Project } from './project.model';
 
-const JsonRecipes = [
+/*const JsonRecipes = [
   {
     naam : 'Résidentie Pégoud',
     beschrijving : "Ruime residentie met 10 appartementen in centrum Waregem",
@@ -18,3 +18,4 @@ const JsonRecipes = [
   }
 ];
 export const PROJECTS: Project[] = JsonRecipes.map(Project.fromJSON);
+*/

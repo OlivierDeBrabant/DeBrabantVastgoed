@@ -1,8 +1,9 @@
-header p {
+#inlog{
     background-color: #ff6600;
     font-size: small;
-    margin: 0px;
+    margin-right: 0px;
     padding: 0px;
+    
 }
 .img{
     object-fit: cover;
@@ -13,10 +14,13 @@ header p {
 div a{
     font: 1.25em sans-serif;
 }
-nav div img{
+nav div img, #inlogMeth{
     margin: 10px;
     display: inline-block;
 }
 body{
     margin-bottom: 20px;
+}
+p{
+    cursor: pointer;
 }

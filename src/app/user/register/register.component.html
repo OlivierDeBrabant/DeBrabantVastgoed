@@ -1,0 +1,149 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="all">
+  <h1 class="pb-2 mt-4 mb-2 border-bottom">
+    <i class="material-icons">person_add</i> Register
+  </h1>
+
+  <div class="allForm">
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+      <div class="form row">
+        <section class="col-sm-12 col-md-6">
+          <div class="form-field">
+            <label for="voornaam">Voornaam:</label>
+            <input
+              class="form-control"
+              id="voornaam"
+              placeholder="voornaam"
+              aria-label="voornaam"
+              data-cy="register-firstname"
+              formControlName="firstname"
+            />
+            <mat-error
+              *ngIf="
+                user.get('firstname').errors && user.get('firstname').touched
+              "
+            >
+              {{ getErrorMessage(user.get("firstname").errors) }}
+            </mat-error>
+          </div>
+          <div class="form-field">
+            <label for="familienaam">Familienaam:</label>
+            <input
+              id="familienaam"
+              class="form-control"
+              placeholder="familienaam"
+              aria-label="familienaam"
+              data-cy="register-lastname"
+              formControlName="lastname"
+            />
+            <mat-error
+              *ngIf="
+                user.get('lastname').errors && user.get('lastname').touched
+              "
+            >
+              {{ getErrorMessage(user.get("lastname").errors) }}
+            </mat-error>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              class="form-control"
+              placeholder="email"
+              aria-label="email"
+              data-cy="register-email"
+              formControlName="email"
+            />
+            <mat-error
+              *ngIf="user.get('email').errors && user.get('email').touched"
+            >
+              {{ getErrorMessage(user.get("email").errors) }}
+            </mat-error>
+          </div>
+        </section>
+        <section class="col-sm-12 col-md-6">
+          <span fxLayout="column" formGroupName="passwordGroup">
+            <label for="wachtwoord">Wachtwoord:</label>
+            <div class="form-field">
+              <input
+                type="password"
+                class="form-control"
+                id="wachtwoord"
+                placeholder="wachtwoord"
+                aria-label="wachtwoord"
+                data-cy="register-password"
+                formControlName="password"
+              />
+              <mat-error
+                *ngIf="
+                  user.get('passwordGroup').get('password').errors &&
+                  user.get('passwordGroup').get('password').touched
+                "
+              >
+                {{
+                  getErrorMessage(
+                    user.get("passwordGroup").get("password").errors
+                  )
+                }}
+              </mat-error>
+            </div>
+
+            <div class="form-field">
+              <label for="bevestigWachtwoord">Bevestig wachtwoord:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="bevestigWachtwoord"
+                placeholder="bevestig wachtwoord"
+                aria-label="bevestig wachtwoord"
+                data-cy="register-confirm-password"
+                formControlName="confirmPassword"
+              />
+              <mat-error
+                *ngIf="
+                  user.get('passwordGroup').get('confirmPassword').errors &&
+                  user.get('passwordGroup').get('confirmPassword').touched
+                "
+              >
+                {{
+                  getErrorMessage(
+                    user.get("passwordGroup").get("confirmPassword").errors
+                  )
+                }}
+              </mat-error>
+            </div>
+            <mat-error
+              *ngIf="
+                user.get('passwordGroup').errors &&
+                user.get('passwordGroup').get('confirmPassword').touched &&
+                user.get('passwordGroup').get('password').touched
+              "
+            >
+              {{ getErrorMessage(user.get("passwordGroup").errors) }}
+            </mat-error>
+          </span>
+
+          
+
+          <button
+            class="button-group d-flex justify-content-end"
+            mat-raised-button
+            type="submit"
+            color="primary"
+            data-cy="register-button"
+          >
+            Register
+          </button>
+        </section>
+      </div>
+    </form>
+    <mat-card class="error" *ngIf="errorMessage" data-cy="appError">
+      got an error: {{ errorMessage }}
+    </mat-card>
+  </div>
+</div>

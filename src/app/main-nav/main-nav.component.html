@@ -1,41 +1,53 @@
-<!DOCTYPE html>
-<html lang="nl">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="stylesheet" href="main-nav.component.css" />
-    <title>MenuBalk</title>
-  </head>
-  <body>
-    <header class="d-none d-md-block ">
-      <p class="text-right">
-        <a class="nav-link">Inloggen</a>
-      </p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
 
-      <nav class="navbar navbar-expand-md  navbar-light bg-light">
-        <div class="container-fluid ml-80">
-          <a [routerLink]="['']"><img src="../../../assets/img/logo.png" height="150px" alt="logo " /></a>
-          
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar-nav"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar-nav">
-            <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" [routerLink]="['']">Home</a>
-              <a class="nav-item nav-link" [routerLink]="['projecten']">Projecten</a>
-              <a class="nav-item nav-link" [routerLink]="['contact']">Info & Contact</a>
-            </div>
-          </div>
+
+<body>
+  <div class="navbar-nav ml-auto text-right" id="inlog">
+    <span *ngIf="loggedInUser$ | async as user; else loginTemplate">
+      {{ user }} 
+      <p class="nav-item" id="inlogMeth" (click)="naarDashboard()">Dashboard</p>
+      <p class="nav-item" id="inlogMeth" (click)="logout()">Uitloggen</p>
+      
+    </span>
+    <ng-template #loginTemplate>
+      <span>
+        <p class="nav-item" id="inlogMeth" (click)="login()">Inloggen</p>
+      </span>
+    </ng-template>
+  </div>
+
+  <nav class="navbar navbar-expand-md bg-light navbar-light">
+    
+      <a [routerLink]="['']"
+        ><img src="../../../assets/img/logo.png" height="150px" alt="logo "
+      /></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse ml-auto" id="collapsibleNavbar">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" [routerLink]="['']">Home</a>
+          <a class="nav-item nav-link" [routerLink]="['projecten']">Projecten</a>
+          <a class="nav-item nav-link" [routerLink]="['contact']">Info & Contact</a>
         </div>
-      </nav>
-    </header>
-  </body>
-</html>
+      </div>
+    
+  </nav>
+</body>

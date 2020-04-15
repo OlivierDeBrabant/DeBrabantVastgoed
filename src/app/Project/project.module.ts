@@ -11,12 +11,12 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectOverzichtComponent } from './project-overzicht/project-overzicht.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { AuthGuard } from '../user/auth.guard';
 
 
 const appRoutes: Routes = [
-  { path: 'projectProduct', component: ProjectProductComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'editProject', component: EditProjectComponent}
+  { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
+  { path: 'editProject', canActivate: [AuthGuard], component: EditProjectComponent}
 ];
 
 @NgModule({
