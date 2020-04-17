@@ -26,7 +26,7 @@ export class ProjectOverzichtComponent implements OnInit {
     this._router.navigate(['contact'])
   } 
   editProject(project: Project){
-    this._router.navigate(['dashboard/editProject'])
+    this._router.navigate(['dashboard/project/', project.projectID])
   }
   addProduct(project: Project){
 

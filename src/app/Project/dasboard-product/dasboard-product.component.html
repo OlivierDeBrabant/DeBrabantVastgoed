@@ -1,0 +1,17 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<div id="all">
+  <h1><i class="fa fa-building"></i> Edit Project {{ project.naam }}</h1>
+  <hr />
+  <div>
+    <button class="btn btn-primary" (click)="addProduct()">Add Product</button><hr>
+</div>
+  <app-edit-project [projecte]="project"></app-edit-project><hr>
+
+  <div *ngFor="let product of project.producten">
+    <app-edit-product [product]="product"></app-edit-product>
+  </div>
+</div>

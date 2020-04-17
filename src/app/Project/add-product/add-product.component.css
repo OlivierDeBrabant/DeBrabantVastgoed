@@ -1,0 +1,13 @@
+#all{
+    margin-right : 50px;
+    margin-left: 50px;
+}
+h1{
+    font: 2em sans-serif;
+}
+.form-field{
+    margin-bottom: 1em;
+}
+#isVerkocht{
+    margin-right: 5px;
+}

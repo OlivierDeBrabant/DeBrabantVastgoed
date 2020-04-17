@@ -21,7 +21,6 @@ export class ProjectProductComponent implements OnInit {
         .getProject$(pa.get("id"))
         .subscribe((item) => (this.project = item, console.log('item:' + item)))
     );
-    console.log(this.project.naam)
   }
   
   get producten() {

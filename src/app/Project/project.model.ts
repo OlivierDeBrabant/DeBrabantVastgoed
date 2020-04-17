@@ -1,4 +1,5 @@
 import { Product, ProductJson } from "./product.model";
+import { JsonPipe } from '@angular/common';
 
 interface ProjectJson {
   projectID: number;
@@ -9,7 +10,7 @@ interface ProjectJson {
 }
 
 export class Project {
-  private _projectID: number;
+  _projectID: number;
   constructor(
     private _naam: string,
     private _beschrijving: string,
@@ -35,9 +36,20 @@ export class Project {
       adres: this.adres,
     };
   }
-
+  toJSONMetProducten(): ProjectJson {
+    return <ProjectJson>{
+      projectID: this._projectID,
+      naam: this.naam,
+      beschrijving: this.beschrijving,
+      adres: this.adres,
+      producten: this.producten
+    };
+  }
   get projectID(): number {
     return this._projectID;
+  }
+  set setProjectID(id: number){
+    this._projectID = id;
   }
   get naam(): string {
     return this._naam;

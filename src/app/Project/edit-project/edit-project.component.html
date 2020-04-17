@@ -1,2 +1,50 @@
-<h1>Kaka</h1>
-<h1>{{ project.naam }}</h1>
+<div id="#all">
+  <div class="row">
+    <section class="col-sm-12 col-md-6">
+    <form [formGroup]="project" (ngSubmit)="onSubmit()">
+      <div class="form">
+        <div class="form-field">
+          <label for="naam">Naam:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="naam"
+            placeholder="naam"
+            formControlName="naam"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="beschrijving">Beschrijving:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="beschrijving"
+            placeholder="beschrijving project"
+            formControlName="beschrijving"
+            rows="3"
+          />
+        </div>
+        <div class="form-field">
+          <label for="adres">Adres:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="adres"
+            placeholder="adres van project"
+            formControlName="adres"
+            required
+          />
+        </div>
+        <button
+          class="btn btn-secondary mt-2"
+          type="submit"
+          [disabled]="!project.valid"
+        >
+          Edit project
+        </button>
+      </div>
+    </form>
+    </section>
+  </div>
+</div>

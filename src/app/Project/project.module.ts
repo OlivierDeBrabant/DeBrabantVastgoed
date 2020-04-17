@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectOverzichtComponent } from './project-overzicht/project-overzicht.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { AuthGuard } from '../user/auth.guard';
+import { DasboardProductComponent } from './dasboard-product/dasboard-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 const appRoutes: Routes = [
@@ -20,7 +23,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProjectComponent, ProductComponent, ProjectListComponent, ProjectProductComponent, AddProjectComponent, DashboardComponent, ProjectOverzichtComponent, EditProjectComponent],
+  declarations: [ProjectComponent, ProductComponent, ProjectListComponent, ProjectProductComponent, AddProjectComponent, DashboardComponent, ProjectOverzichtComponent, EditProjectComponent, DasboardProductComponent, EditProductComponent, AddProductComponent],
   imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule],
   exports: [ProjectListComponent]
 })

@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +30,21 @@ export class ProjectDataService {
       .get(`${environment.apiUrl}/Projects/${id}`)
       .pipe(catchError(this.handleError), map(Project.fromJSON));
   }
-
-  /*getProjectOpNaam(naam: string){
-    this.projects$.filter
+  addNewProduct(id: string, product: Product){
+    return this.http.post(`${environment.apiUrl}/Projects/${id}/AddProduct`, product.toJSON())
+        .pipe(map(Product.fromJSON))
+        .subscribe();
+  }
+  editProject(id: string, project: Project){
+    console.log(project._projectID + "ID: " + id)
+    console.log("naam: " + project.naam )
+    console.log("beschrijving: " + project.beschrijving)
+    console.log("adres: " + project.adres)
     
-  } */
+    return this.http.put(`${environment.apiUrl}/Projects/${id}`, project.toJSONMetProducten())
+        .pipe(map(Project.fromJSON))
+        .subscribe();
+  }
   handleError(err: any): Observable<never> {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {

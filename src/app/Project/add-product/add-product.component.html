@@ -1,0 +1,93 @@
+<div id="all">
+  <div class="all">
+    <h1 class="font-weight-normal">
+      <i class="fa fa-home"></i> Product toevoegen
+    </h1>
+    <hr />
+    <form [formGroup]="product" (ngSubmit)="onSubmit()">
+      <div class="form">
+        <div class="form-field">
+          <label for="titel">Titel:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titel"
+            placeholder="titel van product"
+            formControlName="titel"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="beschrijving">Beschrijving:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="beschrijving"
+            placeholder="beschrijving product"
+            formControlName="beschrijving"
+            rows="3"
+          />
+        </div>
+        <div class="form-field">
+          <label for="oppervlakte">Oppervlakte:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="oppervlakte"
+            placeholder=""
+            formControlName="oppervlakte"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="kostprijs">Kostprijs:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="kostprijs"
+            placeholder=""
+            formControlName="kostprijs"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="type">Type:</label>
+          <select
+            type="text"
+            class="form-control"
+            id="type"
+            placeholder="Kies een type"
+            formControlName="type"
+            required
+          >
+            <option value="Open huis" selected>Open huis</option>
+            <option value="Halfopen huis">Halfopen huis</option>
+            <option value="Gesloten huis">Gesloten huis</option>
+            <option value="Appartement">Appartement</option>
+            <option value="Loft">Loft</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <div class="form-group">
+            
+            <input
+              type="checkbox"
+              class="form-input"
+              id="isVerkocht"
+              placeholder=""
+              formControlName="isVerkocht"
+            />
+            <label class="form-check-label" for="isVerkocht">Is reeds verkocht</label>
+          </div>
+        </div>
+        <button
+          class="btn btn-secondary"
+          type="submit"
+          [disabled]="!product.valid"
+        >
+          Add project
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
