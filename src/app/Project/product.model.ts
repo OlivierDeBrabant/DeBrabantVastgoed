@@ -69,4 +69,7 @@ export class Product {
     }
     return '€ ' + this.kostprijs;
   }
+  get naamFoto(){
+    return this.titel.replace(/\s/g, "");
+  }
 }

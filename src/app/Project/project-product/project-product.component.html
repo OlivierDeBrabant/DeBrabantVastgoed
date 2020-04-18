@@ -27,7 +27,7 @@
         <div class="card" style="width: 400px" id="card">
           <img
             class="card-img-top"
-            src="../../../assets/img/placeholder 300x250.jpg"
+            src="../../../assets/img/imgProducts/{{ product.naamFoto }}.jpg"
           />
           <div *ngIf="product.isVerkocht">
             <div class="card-img-overlay">
@@ -41,7 +41,7 @@
               Kostprijs: {{ product.kostprijsMetDefault }}
             </p>
             <p class="card-text text-muted">
-              Opppervlakte: {{ product.oppervlakte }} m²
+              Oppervlakte: {{ product.oppervlakte }} m²
             </p>
             <p class="card-text text-muted">Type: {{ product.type }}</p>
           </div>

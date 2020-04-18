@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, EMPTY } from "rxjs";
 import { Project } from "../project.model";
 import { ProjectDataService } from "../project-data.service";
 import { Router } from "@angular/router";
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: "app-project-overzicht",
@@ -12,13 +13,21 @@ import { Router } from "@angular/router";
 export class ProjectOverzichtComponent implements OnInit {
   private _fetchProjects$: Observable<Project[]> = this._projectDataService
     .projects$;
-
+  public errorMessage: string = '';
+  
   constructor(
     private _projectDataService: ProjectDataService,
     private _router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._fetchProjects$ = this._projectDataService.allProjects$.pipe(
+      catchError(err => {
+        this.errorMessage = err;
+        return EMPTY;
+      })
+    );
+  }
 
   get projects$(): Observable<Project[]> {
     return this._fetchProjects$;
@@ -34,5 +43,6 @@ export class ProjectOverzichtComponent implements OnInit {
   editProject(project: Project) {
     this._router.navigate(["dashboard/project/", project.projectID]);
   }
-  addProduct(project: Project) {}
+  //addProduct(project: Project) {}
+  
 }

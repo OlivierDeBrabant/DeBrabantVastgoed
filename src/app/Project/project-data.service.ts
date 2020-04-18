@@ -28,7 +28,7 @@ export class ProjectDataService {
       });
   }
 
-  get allRecipes$(): Observable<Project[]> {
+  get allProjects$(): Observable<Project[]> {
     return this._projects$;
   }
 
@@ -37,8 +37,7 @@ export class ProjectDataService {
       tap(console.log),
       shareReplay(1),
       catchError(this.handleError),
-      map(
-      (list: any[]): Project[] => list.map(Project.fromJSON)
+      map((list: any[]): Project[] => list.map(Project.fromJSON)
     ));
   }
   addNewProject(project : Project){
