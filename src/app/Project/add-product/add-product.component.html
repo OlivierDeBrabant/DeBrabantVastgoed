@@ -19,14 +19,14 @@
         </div>
         <div class="form-field">
           <label for="beschrijving">Beschrijving:</label>
-          <input
+          <textarea
             type="text"
             class="form-control"
             id="beschrijving"
             placeholder="beschrijving product"
             formControlName="beschrijving"
             rows="3"
-          />
+          ></textarea>
         </div>
         <div class="form-field">
           <label for="oppervlakte">Oppervlakte:</label>
@@ -69,7 +69,6 @@
         </div>
         <div class="form-field">
           <div class="form-group">
-            
             <input
               type="checkbox"
               class="form-input"
@@ -85,7 +84,7 @@
           type="submit"
           [disabled]="!product.valid"
         >
-          Add project
+          Add product
         </button>
       </div>
     </form>

@@ -8,7 +8,7 @@ export interface ProductJson {
   isVerkocht: boolean;
 }
 export class Product {
-  private _productID: number;
+  _productID: number;
   constructor(
     private _titel: string,
     private _oppervlakte: number,
@@ -38,7 +38,7 @@ export class Product {
       beschrijving: this.beschrijving,
       kostprijs: this.kostprijs,
       type: this.type,
-      isVerkocht: this.isVerkocht,
+      isVerkocht: this.isVerkocht
     };
   }
 
@@ -64,29 +64,9 @@ export class Product {
     return this._isVerkocht;
   }
   get kostprijsMetDefault(){
-    if(this.kostprijs==0 || this.kostprijs==null || typeof this.kostprijs === 'undefined'){
+    if(this.kostprijs==0 || this.kostprijs==null || typeof this.kostprijs === 'undefined' || this.isVerkocht){
       return "Niet bekend"
     }
     return '€ ' + this.kostprijs;
-  }
-  get typeString(){
-    if(this.type=='0'){
-      return "Huis open"
-    }
-    else if(this.type=='1'){
-      return "Huis halfopen"
-    }
-    else if(this.type=='2'){
-      return "Huis gesloten"
-    }
-    else if(this.type=='3'){
-      return "Appartement"
-    }
-    else if (this.type=='4'){
-      return "Loft"
-    }
-    else{
-      return "Niet bekend"
-    }
   }
 }

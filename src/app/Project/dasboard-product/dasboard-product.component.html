@@ -7,11 +7,20 @@
   <h1><i class="fa fa-building"></i> Edit Project {{ project.naam }}</h1>
   <hr />
   <div>
-    <button class="btn btn-primary" (click)="addProduct()">Add Product</button><hr>
-</div>
-  <app-edit-project [projecte]="project"></app-edit-project><hr>
+    <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+    <hr />
+  </div>
+  <app-edit-project [projecte]="project"></app-edit-project>
+  <hr />
 
-  <div *ngFor="let product of project.producten">
-    <app-edit-product [product]="product"></app-edit-product>
+  <h1 class="font-weight-normal">
+    <i class="fa fa-home"></i> Edit huizen/appartementen van project
+    {{ project.naam }}
+  </h1>
+  <hr />
+  <div class="row">
+    <div *ngFor="let product of project.producten">
+      <app-edit-product [prod]="product"></app-edit-product>
+    </div>
   </div>
 </div>

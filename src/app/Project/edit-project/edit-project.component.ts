@@ -23,7 +23,7 @@ export class EditProjectComponent implements OnInit {
   ngOnInit() {
     this.project = new FormGroup({
       naam: new FormControl(this.projecte.naam, [Validators.required, Validators.minLength(5)]),
-      beschrijving: new FormControl(this.projecte.beschrijving),
+      beschrijving: new FormControl(this.projecte.beschrijving, [Validators.required]),
       adres: new FormControl(this.projecte.adres, [Validators.required, Validators.minLength(5)])
     })
   }
