@@ -26,9 +26,6 @@ export class ProjectListComponent {
       })
     );
   }
-  /*get projects(): Project[] {
-    return this._projects;
-  }*/
   get projects$(): Observable<Project[]> {
     return this._fetchProjects$;
   }

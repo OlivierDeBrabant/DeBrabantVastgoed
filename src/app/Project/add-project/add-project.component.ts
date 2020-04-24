@@ -13,8 +13,7 @@ import { Router } from '@angular/router';
 })
 export class AddProjectComponent implements OnInit {
   public project: FormGroup;
-  private _fetchProjects$: Observable<Project[]> 
-    = this._projectDataService.projects$;
+  
 
   constructor(private _projectDataService: ProjectDataService, private _router: Router) { }
   @Output() public newProject = new EventEmitter<Project>();

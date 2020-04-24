@@ -1,12 +1,18 @@
 <body>
-  <div class="card" style="width: 400px">
-    <img class="card-img-top text-center" src="../../../assets/img/imgProjects/{{ project.naamZonderSpatie }}.jpg"/>
+  <div class="card" style="width: 400px;">
+    <div [routerLink]="['projectproduct/', project.projectID]">
+      <img
+        class="card-img-top text-center"
+        src="../../../assets/img/imgProjects/{{ project.naamZonderSpatie }}.jpg"
+      />
+    </div>
     <div class="card-body">
       <h4 class="card-title">{{ project.naam }}</h4>
       <p class="card-text text-muted">{{ project.beschrijving }}</p>
       <p class="card-text text-muted">{{ project.adres }}</p>
     </div>
-    <a class="nav-link" [routerLink]="['projectproduct/', project.projectID]">Bezoek Project</a
+    <a class="nav-link" [routerLink]="['projectproduct/', project.projectID]"
+      >Bezoek Project</a
     >
   </div>
 </body>

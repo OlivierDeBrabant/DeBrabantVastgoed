@@ -25,7 +25,7 @@ export class AddProductComponent implements OnInit {
       this._projectDataService
         .getProject$(pa.get("id"))
         .subscribe((item) => (this.project = item, console.log('item:' + item)))
-    );
+      );
     this.product = new FormGroup({
       titel: new FormControl('', [Validators.required, Validators.minLength(5)]),
       oppervlakte: new FormControl(''),

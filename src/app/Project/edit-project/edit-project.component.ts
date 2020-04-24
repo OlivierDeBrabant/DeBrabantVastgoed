@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class EditProjectComponent implements OnInit {
   @Input() public projecte: Project;
-
+  public opgeslaan: boolean = false;
   public project: FormGroup;
   private _fetchProjects$: Observable<Project[]> 
     = this._projectDataService.projects$;
@@ -33,6 +33,7 @@ export class EditProjectComponent implements OnInit {
     //this.newProject.emit(p);
     var id = this.projecte.projectID.toString();
     this._projectDataService.editProject(id , p);
+    this.opgeslaan = true;
     this._router.navigate(['dashboard']);
   }
 

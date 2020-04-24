@@ -30,8 +30,9 @@ export class ProjectOverzichtComponent implements OnInit {
   }
 
   get projects$(): Observable<Project[]> {
-    return this._fetchProjects$;
+      return this._fetchProjects$;
   }
+  
   deleteProject(project: Project) {
     var txt;
     if (confirm("Zeker dat u " + project.naam + " wilt verwijderen?")) {

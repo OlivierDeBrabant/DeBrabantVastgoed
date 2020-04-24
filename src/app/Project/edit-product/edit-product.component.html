@@ -82,17 +82,26 @@
             >
           </div>
         </div>
-        <button
-          class="btn btn-secondary"
-          type="submit"
-          [disabled]="!product.valid"
-        >
-          Edit product
-        </button>
+        <div class="row" id="editten">
+          <section class="col">
+            <button
+              class="btn btn-secondary"
+              type="submit"
+              [disabled]="!product.valid"
+            >
+              Edit product
+            </button>
+          </section>
+          <section class="col" *ngIf="opgeslaan" id="opgeslaan">
+            <p><i class="fa fa-check"></i> Opgeslaan</p>
+          </section>
+        </div>
       </div>
     </form>
     <div id="delete">
-      <button class="btn btn-secondary" (click)="deleteProduct(prod)">Delete product</button>
+      <button class="btn btn-secondary" (click)="deleteProduct(prod)">
+        Delete product
+      </button>
     </div>
   </div>
 </div>

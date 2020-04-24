@@ -22,8 +22,8 @@ export class ProjectDataService {
           return throwError(err);
         })
       )
-      .subscribe((recipes: Project[]) => {
-        this._projects = recipes;
+      .subscribe((projects: Project[]) => {
+        this._projects = projects;
         this._projects$.next(this._projects);
       });
   }
@@ -74,8 +74,20 @@ export class ProjectDataService {
   }
   editProject(id: string, project: Project){
     return this.http.put(`${environment.apiUrl}/Projects/${id}`, project.toJSONMetProducten())
-        .pipe(map(Project.fromJSON))
-        .subscribe();
+        .pipe( catchError(this.handleError), map(Project.fromJSON))
+        .pipe(
+          catchError(err => {
+            this._projects$.error(err);
+            return throwError(err);
+          })
+        )
+        .subscribe((proj : Project) => {
+          var p  = this._projects.filter(p => p._projectID === proj._projectID);
+          var index = this._projects.indexOf(p[0])
+          this._projects[index] = proj;
+          this._projects$.next(this._projects);
+        });
+       
   }
   editProduct(id: string, prodId: string, product: Product){
     return this.http.put(`${environment.apiUrl}/Projects/${id}/products/${prodId}`, product.toJSON())

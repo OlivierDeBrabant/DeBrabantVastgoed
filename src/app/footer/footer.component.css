@@ -1,6 +1,9 @@
-.footer{
+.footer {
     margin-left: 80px;
     margin-right: 80px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+.text-center{
+    margin: 0px;
 }

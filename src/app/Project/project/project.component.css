@@ -6,3 +6,6 @@ img {
     height: 200px;
     width: 400px;
 }
+img{
+    cursor: pointer;
+}

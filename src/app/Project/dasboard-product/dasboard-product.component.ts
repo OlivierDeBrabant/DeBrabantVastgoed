@@ -21,7 +21,7 @@ export class DasboardProductComponent implements OnInit {
     this.route.paramMap.subscribe((pa) =>
       this.projectDataService
         .getProject$(pa.get("id"))
-        .subscribe((item) => (this.project = item, console.log('item:' + item)))
+        .subscribe((item) => (this.project = item))
     );
     console.log(this.project.naam)
   }

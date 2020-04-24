@@ -16,7 +16,7 @@ export class EditProductComponent implements OnInit {
 
   public product: FormGroup;
   public project: Project;
-
+  public opgeslaan: boolean = false;
   constructor(private _projectDataService: ProjectDataService, private _router: Router, private route: ActivatedRoute) { }
   @Output() public newProject = new EventEmitter<Product>();
   
@@ -24,7 +24,7 @@ export class EditProductComponent implements OnInit {
       this.route.paramMap.subscribe((pa) =>
       this._projectDataService
         .getProject$(pa.get("id"))
-        .subscribe((item) => (this.project = item, console.log('item:' + item)))
+        .subscribe((item) => (this.project = item))
     );
     this.product = new FormGroup({
       titel: new FormControl(this.prod.titel, [Validators.required, Validators.minLength(5)]),
@@ -37,6 +37,7 @@ export class EditProductComponent implements OnInit {
   }
   onSubmit(){
     var flag = false;
+    
     if(this.product.value.isVerkocht == true){
       flag = true;
     }
@@ -48,12 +49,8 @@ export class EditProductComponent implements OnInit {
     var projectId = this.project.projectID.toString();
     var prodId = this.prod.productID.toString();
     this._projectDataService.editProduct(projectId, prodId, p);
-    
-      console.log("ProdID: " + prodId)
-      console.log("projectID: " + projectId);
-      console.log("Object product id:  " + p.productID)
-
-    //this._router.navigate(['dashboard']);
+    this.opgeslaan = true;
+    //this._router.navigate(['dashboard/project/', projectId]);
   }
   deleteProduct(product: Product){
     var txt;
@@ -62,6 +59,7 @@ export class EditProductComponent implements OnInit {
       var prodId = this.prod.productID.toString();
 
       this._projectDataService.deleteProduct(projectId, prodId, this.prod);
+      this._router.navigate(['dashboard']);
     } 
     document.getElementById("demo").innerHTML = txt;
   }
