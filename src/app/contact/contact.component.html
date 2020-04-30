@@ -1,33 +1,43 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
 
 <div class="contact">
   <div>
-    <h1 class="pb-2 mt-4 mb-2  border-bottom"><i class="material-icons">info_outline</i> Info</h1>
-    <table class=" table table-borderless w-25 p-3">
-        <tbody>
-            <tr>
-                <td><i class="material-icons">email</i></td>
-                <td>Email</td>
-                <td><a href="mailto:info@veninvest.be" rel="nofollow">info@veninvest.be</a></td>
-            </tr>
-            <tr>
-                <td><i class="material-icons">phone</i></td>
-                <td>Telefoonnummer</td>
-                <td>0476/93.93.01</td>
-            </tr>
-            <tr>
-                <td><i class="material-icons">location_on</i></td>
-                <td>Adres</td>
-                <td>Vennebosstraat 9<br>8720 Oeselgem</td>
-            </tr>
-        </tbody>
+    <h1 class="pb-2 mt-4 mb-2 border-bottom">
+      <i class="material-icons">info_outline</i> Info
+    </h1>
+    <table class="table table-borderless w-25 p-3">
+      <tbody>
+        <tr>
+          <td><i class="material-icons">email</i></td>
+          <td>Email</td>
+          <td>
+            <a href="mailto:info@veninvest.be" rel="nofollow"
+              >info@veninvest.be</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><i class="material-icons">phone</i></td>
+          <td>Telefoonnummer</td>
+          <td>0476/93.93.01</td>
+        </tr>
+        <tr>
+          <td><i class="material-icons">location_on</i></td>
+          <td>Adres</td>
+          <td>Vennebosstraat 9<br />8720 Oeselgem</td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <div>
-    <h1 class="pb-2 mt-4 mb-2 border-bottom"><i class="material-icons">perm_contact_calendar</i>
-        Contacteer <small>ons</small>
-      </h1>
-    <form method="GET">
+    <h1 class="pb-2 mt-4 mb-2 border-bottom">
+      <i class="material-icons">perm_contact_calendar</i> Contacteer
+      <small>ons</small>
+    </h1>
+    <form action="https://formspree.io/mwkreyqp" method="POST">
       <div class="row">
         <section class="col-sm-12 col-md-6">
           <fieldset class="form-group">
@@ -47,7 +57,7 @@
               type="email"
               class="form-control"
               id="email"
-              name="email"
+              name="from"
               aria-describedby="emailHelp"
             />
             <small id="emailHelp" class="form-text text-muted">
@@ -79,20 +89,21 @@
               name="onderwerp"
               rows="1"
               maxlength="25"
-            >
-            </textarea>
+            ></textarea>
           </fieldset>
           <fieldset class="form-group">
             <label for="txtBeschrijving">Beschrijving</label>
             <textarea
               class="form-control"
               id="txtBeschrijving"
-              name="beschrijving"
+              name="message"
               rows="9"
             ></textarea>
           </fieldset>
           <div class="button-group d-flex justify-content-end">
-            <button type="submit" class="btn btn-secondary">Verzenden</button>
+            <button type="submit" value="Send" class="btn btn-secondary">
+              Verzenden
+            </button>
           </div>
         </section>
       </div>
