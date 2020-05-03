@@ -1,0 +1,80 @@
+[
+  {
+      "id": 1,
+    "name": "rec1",
+    "beschrijving": "hoi",
+    "adres": "Wakken",
+    "producten": [
+      {
+          "productID": 1,
+        "titel": "Huis 1",
+        "oppervlakte": 50,
+        "beschrijving": "Groot",
+        "kostprijs": 275000,
+        "type": "Huis",
+        "isVerkocht": true
+      },
+      {
+        "productID": 2,
+        "titel": "Huis 2",
+        "oppervlakte": 100,
+        "beschrijving": "Klein",
+        "kostprijs": 355000,
+        "type": "Huis",
+        "isVerkocht": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "rec2",
+    "beschrijving": "hoi",
+    "adres": "Wakken",
+    "producten": [
+      {
+        "productID": 3,
+        "titel": "Huis 1",
+        "oppervlakte": 50,
+        "beschrijving": "Groot",
+        "kostprijs": 275000,
+        "type": "Huis",
+        "isVerkocht": true
+      },
+      {
+        "productID": 4,
+        "titel": "Huis 2",
+        "oppervlakte": 100,
+        "beschrijving": "Klein",
+        "kostprijs": 355000,
+        "type": "Huis",
+        "isVerkocht": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "rec3",
+    "beschrijving": "hoi",
+    "adres": "Wakken",
+    "producten": [
+      {
+        "productID": 5,
+        "titel": "Huis 1",
+        "oppervlakte": 50,
+        "beschrijving": "Groot",
+        "kostprijs": 275000,
+        "type": "Huis",
+        "isVerkocht": true
+      },
+      {
+        "productID": 6,
+        "titel": "Huis 2",
+        "oppervlakte": 100,
+        "beschrijving": "Klein",
+        "kostprijs": 355000,
+        "type": "Huis",
+        "isVerkocht": false
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project/project.component'
-import { ProductComponent } from './product/product.component'
+//import { ProductComponent } from './product/product.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectProductComponent } from './project-product/project-product.component';
@@ -23,7 +23,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProjectComponent, ProductComponent, ProjectListComponent, ProjectProductComponent, AddProjectComponent, DashboardComponent, ProjectOverzichtComponent, EditProjectComponent, DasboardProductComponent, EditProductComponent, AddProductComponent],
+  declarations: [ProjectComponent, /* ProductComponent,*/ ProjectListComponent, ProjectProductComponent, AddProjectComponent, DashboardComponent, ProjectOverzichtComponent, EditProjectComponent, DasboardProductComponent, EditProductComponent, AddProductComponent],
   imports: [CommonModule, HttpClientModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule],
   exports: [ProjectListComponent]
 })

@@ -11,7 +11,7 @@
     <div *ngIf="projects$ | async as projecten; else loading">
       <div class="row">
         <div class="project" *ngFor="let project of projects$ | async">
-          <app-project [project]="project"></app-project>
+          <app-project [project]="project" data-cy="projectCard"></app-project>
         </div>
       </div>
     </div>

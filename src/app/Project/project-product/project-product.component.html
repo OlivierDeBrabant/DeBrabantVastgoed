@@ -24,12 +24,12 @@
   <div fxLayout="column" fxLayoutGap="2%">
     <div class="row">
       <div *ngFor="let product of producten">
-        <div class="card" style="width: 400px" id="card">
+        <div class="card" style="width: 400px" id="card" data-cy="productCard">
           <img
             class="card-img-top"
             src="../../../assets/img/imgProducts/{{ product.naamFoto }}.jpg"
           />
-          <div *ngIf="product.isVerkocht">
+          <div *ngIf="product.isVerkocht" data-cy="verkochtLabel">
             <div class="card-img-overlay">
               <p class="p-1 bg-danger text-white text-center">Verkocht!</p>
             </div>

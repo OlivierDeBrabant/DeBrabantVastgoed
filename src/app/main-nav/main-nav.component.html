@@ -8,13 +8,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"
+  ></script>
 </head>
-
 
 <body>
   <div class="navbar-nav ml-auto text-right" id="inlog">
     <span *ngIf="loggedInUser$ | async as user; else loginTemplate">
-      {{ user }} 
+      {{ user }}
       <p class="nav-item" id="inlogMeth" (click)="naarDashboard()">Dashboard</p>
       <p class="nav-item" id="inlogMeth" (click)="logout()">Uitloggen</p>
     </span>
@@ -26,27 +35,27 @@
   </div>
 
   <nav class="navbar navbar-expand-md bg-light navbar-light">
-    
-      <a [routerLink]="['']"
-        ><img src="../../../assets/img/logo.png" height="150px" alt="logo "
-      /></a>
+    <a [routerLink]="['']"
+      ><img src="../../../assets/img/logo.png" height="150px" alt="logo "
+    /></a>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse ml-auto" id="collapsibleNavbar">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" [routerLink]="['']">Home</a>
-          <a class="nav-item nav-link" [routerLink]="['projecten']">Projecten</a>
-          <a class="nav-item nav-link" [routerLink]="['contact']">Info & Contact</a>
-        </div>
+    <div class="collapse navbar-collapse ml-auto" id="collapsibleNavbar">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" [routerLink]="['']">Home</a>
+        <a class="nav-item nav-link" [routerLink]="['projecten']">Projecten</a>
+        <a class="nav-item nav-link" [routerLink]="['contact']"
+          >Info & Contact</a
+        >
       </div>
-    
+    </div>
   </nav>
 </body>
