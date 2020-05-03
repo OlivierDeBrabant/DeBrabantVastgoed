@@ -1,27 +1,28 @@
 # DbVastgoedApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+## Toevoegen Projecten
 
-## Development server
+Wanneer u projecten toevoegd die een naam heeft uit onderstaande lijst, zal er een foto verschijnen op de site bij het nieuwe project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Caesarpark
+* Eikenveld
+* Lekkerbek
+* Mierepad
+* Vindevogel
+* Waardamme
+* Zonnebloem
+* Zwanenloop
 
-## Code scaffolding
+## Toevoegen Producten
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Zelfde als bij projecten, als u een naam uit onderstaande lijst kiest zullen er foto's op de site verschijnen.
 
-## Build
+* Appartement 1
+* Appartement 2
+* Appartement 3
+* Appartement 4
+* Huis 1
+* Huis 2
+* Huis 3
+* Huis 4
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
