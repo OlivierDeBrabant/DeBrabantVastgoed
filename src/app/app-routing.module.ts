@@ -14,7 +14,6 @@ import { ProjectProductComponent } from './Project/project-product/project-produ
 import { AuthGuard } from './user/auth.guard';
 import { DasboardProductComponent } from './Project/dasboard-product/dasboard-product.component';
 import { AddProductComponent } from '../app/Project/add-product/add-product.component';
-
 const appRoutes: Routes = [
   //{ path: 'dashboard', canActivate: [AuthGuard]},
   { path: '', component: HomepageComponent },
@@ -29,7 +28,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [		
+   ],
   imports: [CommonModule, RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })

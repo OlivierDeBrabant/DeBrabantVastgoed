@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.model';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpEvent, HttpEventType, HttpRequest } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { map, tap, catchError, shareReplay } from 'rxjs/operators';
@@ -33,7 +33,7 @@ export class ProjectDataService {
   }
 
   get projects$(): Observable< Project[] > {
-    return this.http.get(`${environment.apiUrl}/Projects/`).pipe(
+       return this.http.get(`${environment.apiUrl}/Projects/`).pipe(
       tap(console.log),
       shareReplay(1),
       catchError(this.handleError),
@@ -59,6 +59,7 @@ export class ProjectDataService {
     return this.http
       .get(`${environment.apiUrl}/Projects/${id}`)
       .pipe(catchError(this.handleError), catchError(this.handleError), map(Project.fromJSON));
+      
   }
   addNewProduct(id: string, product: Product){
     return this.http.post(`${environment.apiUrl}/Projects/${id}/AddProduct`, product.toJSON())
@@ -106,14 +107,22 @@ export class ProjectDataService {
       });
   }
   deleteProduct(id: string, prodId: string, product: Product){
-    console.log('Verwijderen')
-    console.log(product._productID)
     return this.http
       .delete(`${environment.apiUrl}/Projects/${id}/products/${prodId}`)
       .pipe(tap(console.log), catchError(this.handleError))
       .subscribe();
   }
 
+  public downloadFile(file: string): Observable<HttpEvent<Blob>> {
+    return this.http.request(new HttpRequest(
+      'GET',
+      `${environment.apiUrl}/Upload/download?file=${file}`,
+      null,
+      {
+        reportProgress: true,
+        responseType: 'blob'
+      }));
+  }
   handleError(err: any): Observable<never> {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {

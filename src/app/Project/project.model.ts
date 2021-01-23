@@ -1,5 +1,5 @@
+import { ImgPath, ImgPathJson } from "./imgPath";
 import { Product, ProductJson } from "./product.model";
-import { JsonPipe } from '@angular/common';
 
 interface ProjectJson {
   projectID: number;
@@ -7,6 +7,7 @@ interface ProjectJson {
   beschrijving: string;
   adres: string;
   producten: ProductJson[];
+  imgPaths: ImgPathJson[];
 }
 
 export class Project {
@@ -15,7 +16,8 @@ export class Project {
     private _naam: string,
     private _beschrijving: string,
     private _adres: string,
-    private _producten = new Array<Product>()
+    private _producten = new Array<Product>(),
+    private _imgPaths = new Array<ImgPath>()
   ) {}
 
   static fromJSON(json: ProjectJson): Project {
@@ -23,7 +25,8 @@ export class Project {
       json.naam,
       json.beschrijving,
       json.adres,
-      json.producten.map(Product.fromJSON)
+      json.producten.map(Product.fromJSON),
+      json.imgPaths.map(ImgPath.fromJSON)
     );
     project._projectID = json.projectID;
     return project;
@@ -42,7 +45,8 @@ export class Project {
       naam: this.naam,
       beschrijving: this.beschrijving,
       adres: this.adres,
-      producten: this.producten
+      producten: this.producten,
+      imgPaths: this.imgPaths
     };
   }
   get projectID(): number {
@@ -67,6 +71,9 @@ export class Project {
   }
   get naamZonderSpatie(): string {
     return this._naam.replace(/\s/g, "");
+  }
+  get imgPaths(): ImgPath[]{
+    return this._imgPaths;
   }
   /*addProduct(titel: string, prijs?: number, beschrijving?: string) {
     this._producten.push(`${titel || 1} ${beschrijving || ""} ${prijs}`);

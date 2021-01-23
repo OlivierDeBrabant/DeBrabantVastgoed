@@ -1,10 +1,12 @@
 <body>
   <div class="card" style="width: 400px;">
     <div [routerLink]="['projectproduct/', project.projectID]">
-      <img
+      <!-- <img
         class="card-img-top text-center"
         src="../../../assets/img/imgProjects/{{ project.naamZonderSpatie }}.jpg"
-      />
+      /> -->
+      
+      <img [src]="sanitizer.bypassSecurityTrustUrl(getImage())">
     </div>
     <div class="card-body">
       <h4 class="card-title">{{ project.naam }}</h4>

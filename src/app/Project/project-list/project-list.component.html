@@ -10,7 +10,7 @@
   <div fxLayout="column" fxLayoutGap="2%">
     <div *ngIf="projects$ | async as projecten; else loading">
       <div class="row">
-        <div class="project" *ngFor="let project of projects$ | async">
+        <div class="project" *ngFor="let project of projects$ |async">
           <app-project [project]="project" data-cy="projectCard"></app-project>
         </div>
       </div>
